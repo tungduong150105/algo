@@ -1,41 +1,36 @@
-# =========================
-# macOS CP Makefile (Clang)
-# =========================
-
-# Problem name = current folder name (A -> A.cpp -> ./A)
 PROBLEM_NAME := $(notdir $(CURDIR))
 TARGET       := $(PROBLEM_NAME)
 SRC          := $(PROBLEM_NAME).cpp
 
-# Toolchain (override with: make CXX=g++ if you really want GCC)
-CXX ?= g++-15
+CXX ?= clang++
 
-# Toggle debug/sanitizers: make DEBUG=false  (default: true)
-DEBUG ?= false
+BASEFLAGS := -std=c++20 \
+  -O2 \
+  -fdiagnostics-color=always \
+  -Wall -Wextra -Wpedantic \
+  -Wshadow -Wformat=2 -Wfloat-equal -Wconversion \
+  -Wshift-sign-overflow \
+  -Wcast-qual -Wcast-align \
+  -Wno-unused-result -Wno-sign-conversion
 
-# ---- Flags (Clang/macOS friendly)
-BASEFLAGS := -std=c++20 -mmacosx-version-min=26.0 -O2 -fdiagnostics-color=always -Wall -Wextra -pedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op-parentheses -Wshift-sign-overflow -Wcast-qual -Wcast-align -Wno-unused-result -Wno-sign-conversion
-
-SANFLAGS  := -fsanitize=address -fsanitize=undefined -fno-sanitize-recover=all \
-             -fstack-protector-all -g
+DEBUGFLAGS := -g \
+  -fsanitize=address,undefined \
+  -fno-sanitize-recover=all
 
 ifeq ($(DEBUG),true)
-  CXXFLAGS := $(BASEFLAGS) $(SANFLAGS)
-  LDFLAGS  := $(SANFLAGS)
+  CXXFLAGS := $(BASEFLAGS:-O2=) $(DEBUGFLAGS)
+  LDFLAGS  := $(DEBUGFLAGS)
 else
   CXXFLAGS := $(BASEFLAGS)
   LDFLAGS  :=
 endif
 
-# ---- Default target
 all: $(TARGET)
 .PHONY: all
 
-# Build rule
 %: %.cpp
 	$(CXX) $(CXXFLAGS) $< $(LDFLAGS) -o $@
 
-# Clean
 clean:
 	-rm -rf $(TARGET)
 .PHONY: clean
@@ -47,15 +42,9 @@ veryclean:
 rebuild: clean all
 .PHONY: rebuild
 
-# ======================
-#   RUN / IO TEST HELPERS
-# ======================
-
-# Use macOS /usr/bin/time with -l for resource stats (max RSS, etc.)
 TIMEBIN := /usr/bin/time
 TIMEOPT := -p
 
-# Run with timing
 run: $(TARGET)
 	$(TIMEBIN) $(TIMEOPT) ./$(TARGET)
 ifeq ($(DEBUG),true)
@@ -71,12 +60,10 @@ ifeq ($(DEBUG),true)
 endif
 .PRECIOUS: %.res
 
-# Colors
 GREEN := \033[0;32m
 RED   := \033[0;31m
 NC    := \033[0m   # No Color
 
-# Compare .res (actual) with .out (expected)
 __test_%: %.res %.out
 	@echo "Testing $*..."
 	@set -e; \
@@ -99,7 +86,6 @@ __test_%: %.res %.out
 	fi
 .PHONY: __test_%
 
-# Batch helpers
 CASES := $(sort $(basename $(wildcard *.in)))
 TESTS := $(sort $(basename $(wildcard *.out)))
 

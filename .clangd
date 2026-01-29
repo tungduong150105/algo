@@ -1,0 +1,30 @@
+CompileFlags:
+  Add:
+    - -std=c++20
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Wshadow
+    - -Wformat=2
+    - -Wfloat-equal
+    - -Wconversion
+    - -Wshift-sign-overflow
+    - -Wcast-qual
+    - -Wcast-align
+    - -Wno-sign-conversion
+    - -Wno-unused-parameter
+    - -Wno-unused-result
+    - -stdlib=libc++
+    - -isysroot
+    - /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk
+
+Diagnostics:
+  ClangTidy:
+    Add: []
+    Remove: ["*"]
+
+Index:
+  Background: Build
+
+Completion:
+  AllScopes: true
