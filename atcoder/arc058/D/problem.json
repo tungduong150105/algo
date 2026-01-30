@@ -1,0 +1,43 @@
+{
+  "name": "D - Iroha and a Grid",
+  "group": "AtCoder - AtCoder Regular Contest 058",
+  "url": "https://atcoder.jp/contests/arc058/tasks/arc058_b",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "2 3 1 1\n",
+      "output": "2\n"
+    },
+    {
+      "input": "10 7 3 4\n",
+      "output": "3570\n"
+    },
+    {
+      "input": "100000 100000 99999 99999\n",
+      "output": "1\n"
+    },
+    {
+      "input": "100000 100000 44444 55555\n",
+      "output": "738162020\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "DIrohaAndAGrid"
+    }
+  },
+  "batch": {
+    "id": "76b7bcdf-fc99-4bc5-9567-96a7859abab1",
+    "size": 1
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "E - Iroha and Haiku",
+  "group": "AtCoder - AtCoder Regular Contest 058",
+  "url": "https://atcoder.jp/contests/arc058/tasks/arc058_c",
+  "interactive": false,
+  "memoryLimit": 512,
+  "timeLimit": 4000,
+  "tests": [
+    {
+      "input": "3 5 7 5\n",
+      "output": "1\n"
+    },
+    {
+      "input": "4 5 7 5\n",
+      "output": "34\n"
+    },
+    {
+      "input": "37 4 2 3\n",
+      "output": "863912418\n"
+    },
+    {
+      "input": "40 5 7 5\n",
+      "output": "562805100\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "EIrohaAndHaiku"
+    }
+  },
+  "batch": {
+    "id": "8ab33de3-c921-4917-8bc9-1e1fc6e2ae86",
+    "size": 1
+  }
+}
