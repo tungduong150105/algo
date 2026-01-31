@@ -1,0 +1,39 @@
+{
+  "name": "F - Iroha Loves Strings",
+  "group": "AtCoder - AtCoder Regular Contest 058",
+  "url": "https://atcoder.jp/contests/arc058/tasks/arc058_d",
+  "interactive": false,
+  "memoryLimit": 750,
+  "timeLimit": 5000,
+  "tests": [
+    {
+      "input": "3 7\nat\ncoder\ncodar\n",
+      "output": "atcodar\n"
+    },
+    {
+      "input": "3 7\ncoder\ncodar\nat\n",
+      "output": "codarat\n"
+    },
+    {
+      "input": "4 13\nkyuri\nnamida\nzzzzzzz\naaaaaa\n",
+      "output": "namidazzzzzzz\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "FIrohaLovesStrings"
+    }
+  },
+  "batch": {
+    "id": "a7c7fcef-3fe6-473e-ab5a-c814eca466fc",
+    "size": 1
+  }
+}
