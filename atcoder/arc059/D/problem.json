@@ -1,0 +1,35 @@
+{
+  "name": "D - Unbalanced",
+  "group": "AtCoder - AtCoder Regular Contest 059",
+  "url": "https://atcoder.jp/contests/arc059/tasks/arc059_b",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "needed\n",
+      "output": "2 5\n"
+    },
+    {
+      "input": "atcoder\n",
+      "output": "-1 -1\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "DUnbalanced"
+    }
+  },
+  "batch": {
+    "id": "6a4a4cf4-8397-42aa-a7f9-45fcddaa2da1",
+    "size": 1
+  }
+}
