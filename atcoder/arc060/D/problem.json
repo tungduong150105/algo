@@ -1,0 +1,47 @@
+{
+  "name": "D - Digit Sum",
+  "group": "AtCoder - AtCoder Regular Contest 060",
+  "url": "https://atcoder.jp/contests/arc060/tasks/arc060_b",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "87654\n30\n",
+      "output": "10\n"
+    },
+    {
+      "input": "87654\n138\n",
+      "output": "100\n"
+    },
+    {
+      "input": "87654\n45678\n",
+      "output": "-1\n"
+    },
+    {
+      "input": "31415926535\n1\n",
+      "output": "31415926535\n"
+    },
+    {
+      "input": "1\n31415926535\n",
+      "output": "-1\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "DDigitSum"
+    }
+  },
+  "batch": {
+    "id": "090e6b59-f883-413b-8eb1-2611d347d5e2",
+    "size": 1
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "C - Tak and Cards",
+  "group": "AtCoder - AtCoder Regular Contest 060",
+  "url": "https://atcoder.jp/contests/arc060/tasks/arc060_a",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "4 8\n7 9 8 9\n",
+      "output": "5\n"
+    },
+    {
+      "input": "3 8\n6 6 9\n",
+      "output": "0\n"
+    },
+    {
+      "input": "8 5\n3 6 2 8 7 6 5 9\n",
+      "output": "19\n"
+    },
+    {
+      "input": "33 3\n3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3\n",
+      "output": "8589934591\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "CTakAndCards"
+    }
+  },
+  "batch": {
+    "id": "cb097262-b3ec-4aae-95a5-d099cc826b32",
+    "size": 1
+  }
+}
