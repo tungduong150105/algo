@@ -7,8 +7,37 @@ template <typename T> T pow(T a, long long b) {
 }
 
 template <unsigned P> struct ModNum {
+    static int get_primitive_root() {
+        static int primitive_root = 0;
+        if (!primitive_root) {
+            primitive_root = [&]() {
+                std::set<int> fac;
+                int P_1 = P - 1;
+                for (int i = 2; i * i <= P_1; ++i) {
+                    while (P_1 % i == 0) {
+                        fac.insert(i);
+                        P_1 /= i;
+                    }
+                }
+                if (P_1 > 1) fac.insert(P_1);
+                for (int i = 1; i < int(P); ++i) {
+                    bool ok = true;
+                    for (int div : fac) {
+                        if (pow(ModNum(i), (P - 1) / div) == 1) {
+                            ok = false;
+                            break;
+                        }
+                    }
+                    if (ok) return i;
+                }
+                return -1;
+            }();
+        }
+        return primitive_root;
+    }
     unsigned value;
     constexpr ModNum() : value(0) {}
+    static constexpr int mod() { return P; }
 
     template <typename T, typename = std::enable_if_t<std::is_integral<T>::value>>
     constexpr ModNum(T a) : value((((long long)a % P) + P) % P) {}
