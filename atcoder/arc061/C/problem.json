@@ -1,0 +1,35 @@
+{
+  "name": "C - Many Formulas",
+  "group": "AtCoder - AtCoder Regular Contest 061",
+  "url": "https://atcoder.jp/contests/arc061/tasks/arc061_a",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "125\n",
+      "output": "176\n"
+    },
+    {
+      "input": "9999999999\n",
+      "output": "12656242944\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "CManyFormulas"
+    }
+  },
+  "batch": {
+    "id": "2195c285-555c-4c32-b56d-f265b478b0da",
+    "size": 1
+  }
+}
