@@ -1,0 +1,39 @@
+{
+  "name": "C - AtCoDeer and Election Report",
+  "group": "AtCoder - AtCoder Regular Contest 062",
+  "url": "https://atcoder.jp/contests/arc062/tasks/arc062_a",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "3\n2 3\n1 1\n3 2\n",
+      "output": "10\n"
+    },
+    {
+      "input": "4\n1 1\n1 1\n1 5\n1 100\n",
+      "output": "101\n"
+    },
+    {
+      "input": "5\n3 10\n48 17\n31 199\n231 23\n3 2\n",
+      "output": "6930\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "CAtCoDeerAndElectionReport"
+    }
+  },
+  "batch": {
+    "id": "df02fe44-c1bf-43c2-8fa1-d8e640cf3472",
+    "size": 1
+  }
+}
