@@ -1,0 +1,43 @@
+{
+  "name": "F - Rotated Palindromes",
+  "group": "AtCoder - AtCoder Regular Contest 064",
+  "url": "https://atcoder.jp/contests/arc064/tasks/arc064_d",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "4 2\n",
+      "output": "6\n"
+    },
+    {
+      "input": "1 10\n",
+      "output": "10\n"
+    },
+    {
+      "input": "6 3\n",
+      "output": "75\n"
+    },
+    {
+      "input": "1000000000 1000000000\n",
+      "output": "875699961\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "FRotatedPalindromes"
+    }
+  },
+  "batch": {
+    "id": "ee562860-7806-4b18-b5dd-4180b3d373ab",
+    "size": 1
+  }
+}

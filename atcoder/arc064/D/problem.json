@@ -1,0 +1,39 @@
+{
+  "name": "D - An Ordinary Game",
+  "group": "AtCoder - AtCoder Regular Contest 064",
+  "url": "https://atcoder.jp/contests/arc064/tasks/arc064_b",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "aba\n",
+      "output": "Second\n"
+    },
+    {
+      "input": "abc\n",
+      "output": "First\n"
+    },
+    {
+      "input": "abcab\n",
+      "output": "First\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "DAnOrdinaryGame"
+    }
+  },
+  "batch": {
+    "id": "39d89fab-a64a-44cd-b17c-7ba087c03600",
+    "size": 1
+  }
+}

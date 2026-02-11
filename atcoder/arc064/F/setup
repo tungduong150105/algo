@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROBLEM_NAME=$(basename "$PWD")
+SRC="F.cpp"
+OUT="F"
+
+if [[ -f Makefile ]]; then
+  echo "Using Makefile"
+  make rebuild || make
+  exit 0
+fi
+
+echo "No Makefile found → compiling with clang++"
+
+CXX="${CXX:-clang++}"
+
+BASE_FLAGS=(
+  -std=c++20
+  -O2
+  -Wall -Wextra -Wpedantic
+  -Wshadow -Wformat=2 -Wfloat-equal -Wconversion
+  -Wshift-sign-overflow
+  -Wcast-qual -Wcast-align
+  -Wno-unused-result -Wno-sign-conversion
+  -fdiagnostics-color=always
+  -stdlib=libc++
+)
+
+DEBUG_FLAGS=(
+  -g
+  -fsanitize=address,undefined
+  -fno-sanitize-recover=all
+)
+
+if [[ "${DEBUG:-false}" == "true" ]]; then
+  FLAGS=("${BASE_FLAGS[@]/-O2/}" "${DEBUG_FLAGS[@]}")
+else
+  FLAGS=("${BASE_FLAGS[@]}")
+fi
+
+set -x
+"$CXX" "${FLAGS[@]}" "$SRC" -o "$OUT"
+set +x
+
+echo "Built: ./$OUT"
