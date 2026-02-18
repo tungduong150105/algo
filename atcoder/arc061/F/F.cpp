@@ -78,11 +78,9 @@ template <unsigned P> struct ModNum {
     }
 };
 
-
 using Z = ModNum<1000000007>;
 
-template <typename MODINT>
-std::vector<MODINT> nttconv(std::vector<MODINT> a, std::vector<MODINT> b, bool skip_garner);
+template <typename MODINT> std::vector<MODINT> nttconv(std::vector<MODINT> a, std::vector<MODINT> b, bool skip_garner);
 
 constexpr int nttprimes[3] = {998244353, 167772161, 469762049};
 
@@ -191,21 +189,18 @@ int main() {
     using namespace std;
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
     int n, m, k; std::cin >> n >> m >> k;
-    std::vector<Z> fac(n + m + k + 1, 0), ifac(n + m + k + 1, 0);
+    std::vector<Z> fac(n + m + k + 1), ifac(n + m + k + 1);
     fac[0] = 1;
     for (int i = 1; i <= n + m + k; ++i) fac[i] = fac[i - 1] * i;
     ifac[n + m + k] = fac[n + m + k].inv();
     for (int i = n + m + k; i > 0; --i) ifac[i - 1] = ifac[i] * i;
-    auto C = [&](int N, int R) -> Z {
-        if (N < 0 || R < 0 || N < R) return Z(0);
-        return fac[N] * ifac[R] * ifac[N - R];
-    };
-    std::vector<Z> p1, p2;
-    for (int i = 0; i <= m; ++i) p1.push_back(pow(Z(3), m - i) * ifac[i]);
-    for (int i = 0; i <= k; ++i) p2.push_back(pow(Z(3), k - i) * ifac[i]);
-    auto p = nttconv(p1, p2);
+    std::vector<Z> poly1;
+    for (int i = 0; i <= m; ++i) poly1.push_back(ifac[i] * pow(Z(3), m - i));
+    std::vector<Z> poly2;
+    for (int i = 0; i <= k; ++i) poly2.push_back(ifac[i] * pow(Z(3), k - i));
+    auto res = nttconv(poly1, poly2);
     Z ans = 0;
-    for (int s = 0; s <= m + k; ++s) ans += C(n - 1 + s, s) * fac[s] * p[s]; 
+    for (int s = 0; s <= m + k; ++s) ans += fac[n - 1 + s] * ifac[n - 1] * res[s];
     std::cout << ans << "\n";
     return 0;
 }
